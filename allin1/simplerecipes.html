@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UgMFVVVVGwAJVlFaDgk="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),f=c.length,u=i(a,o,r),d=0;f>d;d++)c[d].apply(u,n);return u}function a(t,e){f[t]=s(t).concat(e)}function s(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:s,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:23,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(f){try{r("ierr",[f,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(4),window.onerror=e;try{throw new Error}catch(f){"stack"in f&&(t(1),t(5),"addEventListener"in window&&t(2),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(3),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:10,2:7,3:11,4:3,5:9,6:24,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t){t("loader").features.ins=!0},{loader:"G9z0Bl"}],6:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(1);t("loader").features.stn=!0,t(2),n.on("fn-start",function(t){var e=t[0];e instanceof Event&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof Event&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1),window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:10,2:8,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],7:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:24,2:25,ee:"QJf3ax",gos:"7eSDFh"}],8:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState"],"-")},{1:25,2:24,ee:"QJf3ax"}],9:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:25,2:24,ee:"QJf3ax"}],10:[function(t,e){function n(t,e,n){t[0]=o(t[0],"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:25,2:24,ee:"QJf3ax"}],11:[function(t,e){function n(){f.inPlace(this,p,"fn-")}function r(t,e){f.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),f=c(a),u=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,f.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:7,2:25,ee:"QJf3ax"}],12:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,f="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,u=n(f);if(u&&(r.rxSize=u),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,f=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var f=n(o);f&&(r.txSize=f)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var u=0;c>u;u++)e.addEventListener(s[u],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:13,3:11,4:7,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],13:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],14:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:23,2:24,handle:"D5DuLP"}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],G9z0Bl:[function(t,e){function n(){var t=l.info=NREUM.info;if(t&&t.licenseKey&&t.applicationID&&f&&f.body){s(h,function(e,n){e in t||(t[e]=n)}),l.proto="https"===p.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=f.createElement("script");e.src=l.proto+t.agent,f.body.appendChild(e)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=(t(2),window),f=c.document,u="addEventListener",d="attachEvent",p=(""+location).split("?")[0],h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-627.min.js"},l=e.exports={offset:i(),origin:p,features:{}};f[u]?(f[u]("DOMContentLoaded",o,!1),c[u]("load",n,!1)):(f[d]("onreadystatechange",r),c[d]("onload",n)),a("mark",["firstbyte",i()])},{1:23,2:14,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],23:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],24:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],25:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,f;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){u([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return f=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,f],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,f(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){u([o,e,n,r])}}function f(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){u([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function u(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:24,ee:"QJf3ax"}]},{},["G9z0Bl",4,12,6,5]);</script>
+	<title>Simply Recipes Food and Cooking Blog</title>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+	
+	<link rel='stylesheet' id='sr-styles-css'  href='http://www.simplyrecipes.com/wp-content/themes/simply/assets/css/style.css?ver=5335a8aa' type='text/css' media='all' />
+
+<script type="text/javascript">/* <![CDATA[ */if (!window["WPAC"]) var WPAC = {};WPAC._Options = {debug:false,selectorCommentForm:"#commentform",selectorCommentsContainer:"#comments",selectorCommentPagingLinks:"#comments [class^='nav-'] a",selectorCommentLinks:"#comments a[href*=\"/comment-page-\"]",selectorRespondContainer:"#respond",selectorErrorContainer:"p:parent",popupCornerRadius:5,popupMarginTop:80,popupWidth:50,popupPadding:5,popupFadeIn:400,popupFadeOut:400,popupTimeout:3000,popupBackgroundColorLoading:"#000",popupTextColorLoading:"#fff",popupBackgroundColorSuccess:"#008000",popupTextColorSuccess:"#fff",popupBackgroundColorError:"#f00",popupTextColorError:"#fff",popupOpacity:70,popupTextAlign:"center",popupTextFontSize:"Default font size",popupZindex:1000,scrollSpeed:500,autoUpdateIdleTime:0,textPosted:"Your comment has been posted. Thank you!",textPostedUnapproved:"Your comment has been posted and is awaiting moderation. Thank you!",textReloadPage:"Reloading page. Please wait&hellip;",textPostComment:"Posting your comment. Please wait&hellip;",textRefreshComments:"Loading comments. Please wait&hellip;",textUnknownError:"Something went wrong, your comment has not been posted.",selectorPostContainer:"",commentPagesUrlRegex:"",asyncLoadTrigger:"DomReady",disableUrlUpdate:false,disableScrollToAnchor:false,disableCache:false,commentsEnabled:false,version:"1.3.0"};WPAC._Callbacks = {"beforeSelectElements": function(dom) {},"beforeUpdateComments": function(newDom, commentUrl) {},"afterUpdateComments": function(newDom, commentUrl) {$('img[data-image-url]').each(function(){var url = $(this).attr('data-image-url');$(this).css('background','none').attr('src', url);});},"beforeSubmitComment": function() {}};/* ]]> */</script>      <script type="text/javascript" src="//use.typekit.net/jkq8ltk.js"></script>
+      <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-10921550-1']);
+        _gaq.push(['_trackPageview']);
+        setTimeout("_gaq.push(['_trackEvent', '15_seconds', 'read'])",15000);
+        setTimeout("_gaq.push(['_trackEvent', '30_seconds', 'read'])",30000);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+      <link rel="alternate" type="application/rss+xml" title="Simply Recipes Latest Posts" href="http://feedproxy.google.com/elise/simplyrecipes">
+      <link rel="icon" type="image/ico" href="http://www.simplyrecipes.com/favicon.ico">
+      <meta name="description" content="A family cooking and food blog with hundreds of healthy, whole-food recipes for the home cook.  Photographs, easy-to-follow instructions, and reader comments.">
+      <!-- Facebook Open Graph Tags -->
+      <meta property="og:site_name" content="Simply Recipes">
+      <meta property="fb:app_id" content="138323699531998">
+      <meta property="og:title" content="Simply Recipes Food and Cooking Blog">
+      <meta property="og:url" content="http://www.simplyrecipes.com">
+      <meta property="og:description" content="A family cooking and food blog with hundreds of healthy, whole-food recipes for the home cook.  Photographs, easy-to-follow instructions, and reader comments.">
+      <meta property="og:image" content="http://www.simplyrecipes.com/wp-content/themes/simply/assets/i/simplyrecipes-logo-default.jpg">
+      <meta property="og:type" content="website">
+      <!-- Twitter Card Tags -->
+      <meta property="twitter:card" content="app">
+      <meta property="twitter:site" content="@simplyrecipes">
+      <meta property="twitter:creator" content="@simplyrecipes">
+      <meta property="twitter:title" content="Simply Recipes Food and Cooking Blog">
+      <meta property="twitter:image:src" content="http://www.simplyrecipes.com/wp-content/themes/simply/assets/i/simplyrecipes-logo-default.jpg">
+      <meta property="twitter:url" content="http://www.simplyrecipes.com">
+      <meta property="twitter:domain" content="http://www.simplyrecipes.com">
+      <meta property="twitter:app:country" content="US">
+      <meta property="twitter:app:name:iphone" content="Simply Recipes">
+      <meta property="twitter:app:id:iphone" content="834547246">
+      <meta property="twitter:description" content="Download the Simply Recipes app, featuring 1400 well-crafted recipes for the home cook, with photographs and easy-to-follow instructions to help you prepare them yourself.">
+
+      <!-- Google+ Publisher Link -->
+      <link href="https://plus.google.com/+simplyrecipes" rel="publisher">
+<link rel="canonical" href="http://www.simplyrecipes.com">
+</head>
+
+<body class="home blog recipe-italian_sausage_spaghetti">
+
+    <script type="text/javascript">
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    (function() {
+      var gads = document.createElement("script");
+      gads.async = true;
+      gads.type = "text/javascript";
+      var useSSL = "https:" == document.location.protocol;
+      gads.src = (useSSL ? "https:" : "http:") + "//www.googletagservices.com/tag/js/gpt.js";
+      var node =document.getElementsByTagName("script")[0];
+      node.parentNode.insertBefore(gads, node);
+     })();
+    </script>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    <script>
+    var gptAdSlots = [];
+    googletag.cmd.push(function() {
+      var sidebar_mapping = googletag.sizeMapping().
+        addSize([0, 0], []).
+        addSize([571, 300], [160, 600]).
+        addSize([1015, 300], [[300,250],[300, 600]]).build();
+      var footer_mapping = googletag.sizeMapping().
+        addSize([0, 0], []).
+        addSize([600, 300], [468, 60]).
+        addSize([750, 300], [728, 90]).build();
+      gptAdSlots[0] = googletag.defineSlot('/18190176/SimplyRecipes_Sidebar_2_160x600', [[160,600],[300,250],[300,600]], 'dfp-sidebar-a').
+        defineSizeMapping(sidebar_mapping).
+        setCollapseEmptyDiv(true).
+        addService(googletag.pubads());
+      gptAdSlots[1] = googletag.defineSlot('/18190176/SimplyRecipes_Sidebar_3_160x600', [[160,600],[300,250],[300,600]], 'dfp-sidebar-b').
+        defineSizeMapping(sidebar_mapping).
+        setCollapseEmptyDiv(true).
+        addService(googletag.pubads());
+      gptAdSlots[2] = googletag.defineSlot('/18190176/SimplyRecipes_Above_Footer_728x90', [[468,60],[728,90]], 'dfp-footer-a').
+        defineSizeMapping(footer_mapping).
+        setCollapseEmptyDiv(true).
+        addService(googletag.pubads());
+      gptAdSlots[3] = googletag.defineSlot('/18190176/AJM_Food', [[468,60],[728,90]], 'dfp-footer-b').
+        defineSizeMapping(footer_mapping).
+        setCollapseEmptyDiv(true).
+        addService(googletag.pubads());
+      googletag.pubads();
+      googletag.enableServices();
+    });
+
+    </script>
+<div id="page" class="hfeed site">
+	<header id="masthead" class="site-header" role="banner">
+		
+		<h1 class="site-title"><a href="http://www.simplyrecipes.com/" title="Simply Recipes Food and Cooking Blog" rel="home">Simply Recipes Food and Cooking Blog<span class="site-brand"></span></a></h1>
+		<div class="find-recipes">
+			<div class="find-recipes-action">Find Recipes</div>
+			<div class="find-recipes-panel">
+				
+				<div class="site-search">
+				    <form role="search" method="get" action="http://www.simplyrecipes.com/" >
+						<label class="assistive-text" for="s">Search for:</label>
+						<input type="search" results=5 autosave="recipe_search" name="s" maxlength="255" class="sitesearch-field" placeholder="Search Simply Recipes...">
+						<input type="submit" class="sitesearch-button" value="Search">
+						<span class="sitesearch-button-label">Search</span>
+					</form>					
+				</div>
+				<div class="find-recipes-overlay"></div>
+			</div>
+			<nav role="navigation" class="site-navigation main-navigation">
+				<div class="menu-main-navigation-menu-container"><ul id="menu-main-navigation-menu" class="menu"><li id="menu-item-10433" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-10433"><a title="Simply Recipes Home Page" href="http://www.simplyrecipes.com/">Home</a></li>
+<li id="menu-item-10434" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10434"><a title="About Simply Recipes" href="http://www.simplyrecipes.com/about/">About</a></li>
+<li id="menu-item-10435" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10435"><a title="Alphabetical Index of All Topics on Simply Recipes" rel="nofollow" href="http://www.simplyrecipes.com/index/">Index</a></li>
+<li id="menu-item-10436" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10436"><a title="Subscribe to Simply Recipes" rel="nofollow" href="http://www.simplyrecipes.com/subscribe/">Subscribe</a></li>
+</ul></div>			</nav>
+		</div>
+
+	</header>
+
+	<div id="main" class="site-main">
+		<div id="primary" class="content-area">
+			<div id="content" class="site-content" role="main">
+
+
+<article id="post-154" class="feature-primary post-154 recipe type-recipe status-publish has-post-thumbnail  category-all_seasons category-main_course category-pasta category-pork category-quick tag-italian tag-italiansausage tag-pasta tag-sausage tag-spaghetti ingredient-italian_sausage ingredient-pasta ingredient-pork ingredient-sausage ingredient-spaghetti main-ingredient-pasta main-ingredient-pork course-main_course recipe-type-quick cuisine-italian">
+
+	<div class="entry-content">
+		<div class="featured-image">
+			<a href="http://www.simplyrecipes.com/recipes/italian_sausage_spaghetti/" title="Permalink to EASY Italian Sausage Spaghetti" rel="bookmark"><img width="600" height="400" src="http://www.simplyrecipes.com/wp-content/uploads/2006/09/italian-sausage-spaghetti-horiz-640-600x400.jpg" class="attachment-sr-venti wp-post-image" alt="Italian Sausage Spaghetti" /></a>			
+		</div>
+	</div>
+
+	<header class="entry-header">
+		<h1 class="entry-title"><a href="http://www.simplyrecipes.com/recipes/italian_sausage_spaghetti/" title="Permalink to EASY Italian Sausage Spaghetti" rel="bookmark">EASY Italian Sausage Spaghetti</a></h1>
+		<div class="entry-meta">
+						<span class="entry-commentcount"><a href="http://www.simplyrecipes.com/recipes/italian_sausage_spaghetti/#comments" title="Comments on EASY Italian Sausage Spaghetti" rel="nofollow">26</a></span> | 
+						
+    <span class="entry-byline">Posted by 
+      <span class="author" itemprop="author">
+        <a rel="author" href="http://www.simplyrecipes.com/about/">Elise</a>
+      </span>
+      
+      on <a href="http://www.simplyrecipes.com/recipes/italian_sausage_spaghetti/" title="EASY Italian Sausage Spaghetti" rel="bookmark" class="byline-date updated"><time class="entry-date" datetime="2015-05-09T09:06:23+00:00" pubdate itemprop="datePublished" content="2015-05-09">May 9, 2015</time></a>
+    </span>
+		</div>
+	</header><!-- .entry-header -->
+
+	<div class="entry-details">
+		<p>Everyone one has their favorite way of making spaghetti sauce. Ours is incredibly easy and crazy good, especially considering how easy it is to make.</p>
+		<p><em>Continue reading <a href="http://www.simplyrecipes.com/recipes/italian_sausage_spaghetti/">EASY Italian Sausage Spaghetti</a></em></p>
+	</div>
+	
+
+</article><!-- #post-154 .feature-primary --><div class="entry-list"><h2 class="entry-list-header">Recently on Simply Recipes</h2>
+<li id="post-9796" class="post-9796 recipe type-recipe status-publish has-post-thumbnail  category-sauce tag-buttersauce tag-sauce ingredient-butter_sauce ingredient-egg main-ingredient-egg recipe-type-sauce season-mothers_day cuisine-french">
+
+	<a href="http://www.simplyrecipes.com/recipes/easy_blender_hollandaise_sauce/" title="Easy Blender Hollandaise Sauce">
+
+	
+		<div class="featured-image">
+			<img width="600" height="400" src="http://www.simplyrecipes.com/wp-content/uploads/2010/04/blender-hollandaise-horiz-800-600x400.jpg" class="photo wp-post-image" alt="Easy Blender Hollandaise" />		</div>							
+	 
+
+		<header class="entry-header">
+			<h2 class="entry-title">Easy Blender Hollandaise Sauce</h2>
+		</header>
+
+				<div class="entry-meta">
+						<span class="entry-commentcount">45</span> | 
+						<span class="entry-date">May 7, 2015</span>
+		</div>	
+									
+		<div class="summary">
+			A quick and easy version of this classic French hollandaise sauce, made in a blender.								
+		</div>
+
+	</a>
+
+</li>
+<li id="post-17799" class="post-17799 recipe type-recipe status-publish has-post-thumbnail  ingredient-sweet_potato main-ingredient-vegetable course-breakfast_and_brunch recipe-type-comfort_food recipe-type-gluten-free recipe-type-paleo recipe-type-vegetarian">
+
+	<a href="http://www.simplyrecipes.com/recipes/sweet_potato_hash_browns/" title="Sweet Potato Hash Browns">
+
+	
+		<div class="featured-image">
+			<img width="600" height="400" src="http://www.simplyrecipes.com/wp-content/uploads/2015/04/sweet-potato-hash-browns-horiz-640-600x400.jpg" class="photo wp-post-image" alt="Sweet Potato Hash Browns" />		</div>							
+	 
+
+		<header class="entry-header">
+			<h2 class="entry-title">Sweet Potato Hash Browns</h2>
+		</header>
+
+				<div class="entry-meta">
+						<span class="entry-commentcount">14</span> | 
+						<span class="entry-date">May 6, 2015</span>
+		</div>	
+									
+		<div class="summary">
+			Quick and easy sweet potato hash browns. Grated sweet potatoes fried in butter. 								
+		</div>
+
+	</a>
+
+</li>
+<li id="post-17165" class="post-17165 recipe type-recipe status-publish has-post-thumbnail  ingredient-leek ingredient-potato ingredient-salmon ingredient-smoked_salmon main-ingredient-egg main-ingredient-fish main-ingredient-fish_and_seafood course-breakfast_and_brunch recipe-type-gluten-free season-easter season-mothers_day">
+
+	<a href="http://www.simplyrecipes.com/recipes/smoked_salmon_potato_leek_torta/" title="Smoked Salmon Potato Leek Torta">
+
+	
+		<div class="featured-image">
+			<img width="600" height="400" src="http://www.simplyrecipes.com/wp-content/uploads/2015/02/smoked-salmon-potato-leek-torta-horiz-640-600x400.jpg" class="photo wp-post-image" alt="Smoked Salmon Potato Leek Torta" />		</div>							
+	 
+
+		<header class="entry-header">
+			<h2 class="entry-title">Smoked Salmon Potato Leek Torta</h2>
+		</header>
+
+				<div class="entry-meta">
+						<span class="entry-commentcount">11</span> | 
+						<span class="entry-date">May 4, 2015</span>
+		</div>	
+									
+		<div class="summary">
+			Delicious potato torta with Yukon Gold potatoes, smoked salmon, leeks, dill, eggs, and cream. Perfect for a Sunday brunch!								
+		</div>
+
+	</a>
+
+</li>
+<li id="post-11143" class="post-11143 recipe type-recipe status-publish has-post-thumbnail  ingredient-pork_shoulder ingredient-pulled_pork ingredient-taco main-ingredient-pork course-main_course recipe-type-gluten-free recipe-type-slow_cooker cuisine-mexican cuisine-mexican_and_tex_mex cuisine-southwestern">
+
+	<a href="http://www.simplyrecipes.com/recipes/slow_cooker_mexican_pulled_pork/" title="Slow Cooker Mexican Pulled Pork">
+
+	
+		<div class="featured-image">
+			<img width="600" height="400" src="http://www.simplyrecipes.com/wp-content/uploads/2013/02/mexican-pulled-pork-horiz-800-600x400.jpg" class="photo wp-post-image" alt="Mexican Pulled Pork" />		</div>							
+	 
+
+		<header class="entry-header">
+			<h2 class="entry-title">Slow Cooker Mexican Pulled Pork</h2>
+		</header>
+
+				<div class="entry-meta">
+						<span class="entry-commentcount">171</span> | 
+						<span class="entry-date">May 2, 2015</span>
+		</div>	
+									
+		<div class="summary">
+			Slow cooker pulled pork shoulder, in a chile spice rub, shredded to serve with tortillas in tacos or burritos.								
+		</div>
+
+	</a>
+
+</li>
+<li id="post-1359" class="post-1359 recipe type-recipe status-publish has-post-thumbnail  category-all_seasons category-mexican_and_tex_mex category-quick category-salsa category-seasonal_favorites_summer tag-salsa ingredient-green_chile ingredient-tomato course-appetizer recipe-type-quick recipe-type-salsa season-seasonal_favorites_summer cuisine-mexican_and_tex_mex">
+
+	<a href="http://www.simplyrecipes.com/recipes/fresh_tomato_salsa/" title="Fresh Tomato Salsa">
+
+	
+		<div class="featured-image">
+			<img width="600" height="400" src="http://www.simplyrecipes.com/wp-content/uploads/2005/08/fresh-tomato-salsa-640-dm-600x400.jpg" class="photo wp-post-image" alt="Fresh Tomato Salsa" />		</div>							
+	 
+
+		<header class="entry-header">
+			<h2 class="entry-title">Fresh Tomato Salsa</h2>
+		</header>
+
+				<div class="entry-meta">
+						<span class="entry-commentcount">52</span> | 
+						<span class="entry-date">May 1, 2015</span>
+		</div>	
+									
+		<div class="summary">
+			Mexican salsa recipe made with chopped fresh tomatoes, jalapeno or serano chiles, red onion, cilantro, and lime.  Also called Pico de Gallo or Salsa Fresca.								
+		</div>
+
+	</a>
+
+</li>
+<li id="post-17798" class="post-17798 recipe type-recipe status-publish has-post-thumbnail  ingredient-fruit_salad ingredient-mango ingredient-orange ingredient-pineapple course-salad recipe-type-gluten-free recipe-type-paleo recipe-type-vegan recipe-type-vegetarian cuisine-mexican cuisine-mexican_and_tex_mex">
+
+	<a href="http://www.simplyrecipes.com/recipes/mexican_fruit_cocktail/" title="Mexican Fruit Cocktail">
+
+	
+		<div class="featured-image">
+			<img width="600" height="400" src="http://www.simplyrecipes.com/wp-content/uploads/2015/04/mexican-fruit-cocktail-horiz-640-600x400.jpg" class="photo wp-post-image" alt="Mexican Fruit Cocktail" />		</div>							
+	 
+
+		<header class="entry-header">
+			<h2 class="entry-title">Mexican Fruit Cocktail</h2>
+		</header>
+
+				<div class="entry-meta">
+						<span class="entry-commentcount">11</span> | 
+						<span class="entry-date">April 28, 2015</span>
+		</div>	
+									
+		<div class="summary">
+			Delightful Mexican fruit salad with pineapple, orange, apple, onion, jalapeño, and lime juice								
+		</div>
+
+	</a>
+
+</li>
+<li id="post-10233" class="post-10233 recipe type-recipe status-publish has-post-thumbnail  category-all_seasons category-chicken category-main_course category-mexican_and_tex_mex tag-chicken tag-fajitas tag-texmex ingredient-chicken ingredient-fajitas main-ingredient-chicken course-main_course cuisine-mexican_and_tex_mex cuisine-texmex">
+
+	<a href="http://www.simplyrecipes.com/recipes/chicken_fajitas/" title="Chicken Fajitas">
+
+	
+		<div class="featured-image">
+			<img width="600" height="400" src="http://www.simplyrecipes.com/wp-content/uploads/2012/07/chicken-fajitas-640-dm-600x400.jpg" class="photo wp-post-image" alt="Chicken Fajitas" />		</div>							
+	 
+
+		<header class="entry-header">
+			<h2 class="entry-title">Chicken Fajitas</h2>
+		</header>
+
+				<div class="entry-meta">
+						<span class="entry-commentcount">75</span> | 
+						<span class="entry-date">April 27, 2015</span>
+		</div>	
+									
+		<div class="summary">
+			The BEST chicken fajitas! Marinated chicken breasts seared quickly and served with seared onions and bell peppers, and flour tortillas.								
+		</div>
+
+	</a>
+
+</li>
+<li id="post-17796" class="post-17796 recipe type-recipe status-publish has-post-thumbnail  ingredient-asparagus ingredient-egg ingredient-leek main-ingredient-egg course-breakfast_and_brunch season-easter season-mothers_day">
+
+	<a href="http://www.simplyrecipes.com/recipes/breakfast_casserole_with_leeks_and_asparagus/" title="Breakfast Casserole with Leeks and Asparagus">
+
+	
+		<div class="featured-image">
+			<img width="600" height="400" src="http://www.simplyrecipes.com/wp-content/uploads/2015/04/breakfast-casserole-leeks-asparagus-horiz-640-600x400.jpg" class="photo wp-post-image" alt="Breakfast Casserole with Leeks and Asparagus" />		</div>							
+	 
+
+		<header class="entry-header">
+			<h2 class="entry-title">Breakfast Casserole with Leeks and Asparagus</h2>
+		</header>
+
+				<div class="entry-meta">
+						<span class="entry-commentcount">24</span> | 
+						<span class="entry-date">April 24, 2015</span>
+		</div>	
+									
+		<div class="summary">
+			Breakfast casserole with asparagus, leeks, bacon, bread, milk, eggs, feta and Parmesan. Perfect for spring!								
+		</div>
+
+	</a>
+
+</li>
+<li id="post-17553" class="post-17553 recipe type-recipe status-publish has-post-thumbnail  ingredient-avocado ingredient-canned_tuna ingredient-tuna ingredient-tuna_salad main-ingredient-fish course-salad course-sandwich">
+
+	<a href="http://www.simplyrecipes.com/recipes/avocado_tuna_salad/" title="Avocado Tuna Salad">
+
+	
+		<div class="featured-image">
+			<img width="600" height="400" src="http://www.simplyrecipes.com/wp-content/uploads/2015/04/tuna-avocado-sandwich-horiz-800-600x400.jpg" class="photo wp-post-image" alt="Tuna Avocado Sandwich" />		</div>							
+	 
+
+		<header class="entry-header">
+			<h2 class="entry-title">Avocado Tuna Salad</h2>
+		</header>
+
+				<div class="entry-meta">
+						<span class="entry-commentcount">24</span> | 
+						<span class="entry-date">April 22, 2015</span>
+		</div>	
+									
+		<div class="summary">
+			Healthy and easy! Avocado Tuna Salad with avocado, canned tuna, red onion, celery, and NO mayo.								
+		</div>
+
+	</a>
+
+</li>
+<li id="post-7351" class="post-7351 recipe type-recipe status-publish has-post-thumbnail  category-beef category-low_carb category-main_course tag-beef tag-broccoli tag-chinese ingredient-beef ingredient-broccoli main-ingredient-beef course-main_course recipe-type-low_carb recipe-type-quick cuisine-chinese">
+
+	<a href="http://www.simplyrecipes.com/recipes/broccoli_beef/" title="Broccoli Beef">
+
+	
+		<div class="featured-image">
+			<img width="600" height="400" src="http://www.simplyrecipes.com/wp-content/uploads/2008/11/broccoli-beef-horiz-800-600x400.jpg" class="photo wp-post-image" alt="Broccoli Beef" />		</div>							
+	 
+
+		<header class="entry-header">
+			<h2 class="entry-title">Broccoli Beef</h2>
+		</header>
+
+				<div class="entry-meta">
+						<span class="entry-commentcount">79</span> | 
+						<span class="entry-date">April 19, 2015</span>
+		</div>	
+									
+		<div class="summary">
+			Chinese broccoli beef, thinly sliced beef slices, marinated then stir-fried with garlic and blanched broccoli.								
+		</div>
+
+	</a>
+
+</li>
+<li id="post-17355" class="post-17355 recipe type-recipe status-publish has-post-thumbnail  ingredient-bacon ingredient-cauliflower ingredient-pasta main-ingredient-pasta course-main_course cuisine-italian">
+
+	<a href="http://www.simplyrecipes.com/recipes/cauliflower_pasta_with_bacon_and_parmesan/" title="Cauliflower Pasta with Bacon and Parmesan">
+
+	
+		<div class="featured-image">
+			<img width="600" height="400" src="http://www.simplyrecipes.com/wp-content/uploads/2015/03/cauliflower-pasta-bacon-horiz-800-600x400.jpg" class="photo wp-post-image" alt="Cauliflower Pasta Bacon" />		</div>							
+	 
+
+		<header class="entry-header">
+			<h2 class="entry-title">Cauliflower Pasta with Bacon and Parmesan</h2>
+		</header>
+
+				<div class="entry-meta">
+						<span class="entry-commentcount">18</span> | 
+						<span class="entry-date">April 16, 2015</span>
+		</div>	
+									
+		<div class="summary">
+			Sautéed cauliflower, onions, and bacon, tossed with pasta, Parmesan and toasted panko. So good!								
+		</div>
+
+	</a>
+
+</li>
+<li id="post-7228" class="post-7228 recipe type-recipe status-publish has-post-thumbnail  category-gluten-free category-low_carb category-seasonal_favorites_spring category-side_dish category-vegetable category-vegetarian tag-asparagus ingredient-asparagus ingredient-vegetables main-ingredient-vegetable course-side_dish recipe-type-gluten-free recipe-type-low_carb recipe-type-paleo recipe-type-vegetarian season-seasonal_favorites_spring">
+
+	<a href="http://www.simplyrecipes.com/recipes/roasted_asparagus/" title="Roasted Asparagus">
+
+	
+		<div class="featured-image">
+			<img width="600" height="400" src="http://www.simplyrecipes.com/wp-content/uploads/2008/05/roasted-asparagus-600-2.jpg" class="photo wp-post-image" alt="Roasted Asparagus" />		</div>							
+	 
+
+		<header class="entry-header">
+			<h2 class="entry-title">Roasted Asparagus</h2>
+		</header>
+
+				<div class="entry-meta">
+						<span class="entry-commentcount">35</span> | 
+						<span class="entry-date">April 11, 2015</span>
+		</div>	
+									
+		<div class="summary">
+			Quick and easy roasted asparagus recipe, with thick asparagus spears, olive oil, garlic, salt, pepper, and a little lemon juice.								
+		</div>
+
+	</a>
+
+</li>
+<li id="post-9985" class="post-9985 recipe type-recipe status-publish has-post-thumbnail  category-budget category-casserole category-comfort_food category-pasta tag-casserole tag-cheese tag-italian tag-italiansausage tag-pasta ingredient-cheese ingredient-italian_sausage ingredient-pasta main-ingredient-cheese main-ingredient-pasta course-main_course recipe-type-budget recipe-type-casserole recipe-type-comfort_food cuisine-italian">
+
+	<a href="http://www.simplyrecipes.com/recipes/baked_ziti/" title="Baked Ziti">
+
+	
+		<div class="featured-image">
+			<img width="600" height="400" src="http://www.simplyrecipes.com/wp-content/uploads/2010/12/baked-ziti-horiz-640-600x400.jpg" class="photo wp-post-image" alt="Baked Ziti" />		</div>							
+	 
+
+		<header class="entry-header">
+			<h2 class="entry-title">Baked Ziti</h2>
+		</header>
+
+				<div class="entry-meta">
+						<span class="entry-commentcount">57</span> | 
+						<span class="entry-date">April 10, 2015</span>
+		</div>	
+									
+		<div class="summary">
+			A classic Italian American comfort food of pasta baked with sausage, tomato sauce and all kinds of gooey, yummy cheeses. So EASY and so good!								
+		</div>
+
+	</a>
+
+</li>
+<li id="post-11625" class="post-11625 recipe type-recipe status-publish has-post-thumbnail  ingredient-browned_butter ingredient-chocolate recipe-type-cookie">
+
+	<a href="http://www.simplyrecipes.com/recipes/chocolate_chunk_cookies/" title="Browned Butter Chocolate Chunk Cookies">
+
+	
+		<div class="featured-image">
+			<img width="600" height="400" src="http://www.simplyrecipes.com/wp-content/uploads/2013/04/chocolate-chunk-cookies-horiz-640-600x400.jpg" class="photo wp-post-image" alt="Browned Butter Chocolate Chunk Cookies" />		</div>							
+	 
+
+		<header class="entry-header">
+			<h2 class="entry-title">Browned Butter Chocolate Chunk Cookies</h2>
+		</header>
+
+				<div class="entry-meta">
+						<span class="entry-commentcount">40</span> | 
+						<span class="entry-date">April 9, 2015</span>
+		</div>	
+									
+		<div class="summary">
+			Chocolate chunk cookies using browned butter and chunks of milk chocolate.								
+		</div>
+
+	</a>
+
+</li>
+<li id="post-16718" class="post-16718 recipe type-recipe status-publish has-post-thumbnail  ingredient-avocado ingredient-beet ingredient-beet_salad course-salad recipe-type-gluten-free recipe-type-paleo recipe-type-vegan recipe-type-vegetarian">
+
+	<a href="http://www.simplyrecipes.com/recipes/avocado_beet_salad_with_citrus_vinaigrette/" title="Avocado Beet Salad with Citrus Vinaigrette">
+
+	
+		<div class="featured-image">
+			<img width="600" height="400" src="http://www.simplyrecipes.com/wp-content/uploads/2015/03/avocado-beet-salad-horiz-640-600x400.jpg" class="photo wp-post-image" alt="Avocado Beet Salad" />		</div>							
+	 
+
+		<header class="entry-header">
+			<h2 class="entry-title">Avocado Beet Salad with Citrus Vinaigrette</h2>
+		</header>
+
+				<div class="entry-meta">
+						<span class="entry-commentcount">14</span> | 
+						<span class="entry-date">April 8, 2015</span>
+		</div>	
+									
+		<div class="summary">
+			Simple beet and avocado salad, sprinkled with pistachios and drizzled with a citrusy vinaigrette!								
+		</div>
+
+	</a>
+
+</li></div>	<nav role="navigation" id="nav-below" class="site-navigation paging-navigation">
+		<h1 class="assistive-text">Post navigation</h1>
+
+	
+				<div class="nav-previous"><a href="http://www.simplyrecipes.com/page/2/" rel="nofollow">More posts <span class="meta-nav">&rarr;</span></a></div>
+		
+		
+		
+	
+	</nav><!-- #nav-below -->
+	
+			</div><!-- #content -->
+		</div><!-- #primary -->
+
+<div class="widget-area sidebar-left" role="complementary"><div id="recipesbytype-2" class="widget-1 widget-first widget-odd widget recipes-by-type"><h3 class="widget-title">Recipe Categories</h3><div class="widget-panel"><section class="widget-section active" id="taxonomy-featured"><h4>Featured</h4><ul id="menu-popular-archives" class="menu"><li id="menu-item-14937" class="menu-item menu-item-type-taxonomy menu-item-object-ingredient menu-item-14937"><a href="http://www.simplyrecipes.com/recipes/ingredient/chicken/">Chicken</a></li>
+<li id="menu-item-14938" class="menu-item menu-item-type-taxonomy menu-item-object-ingredient menu-item-14938"><a href="http://www.simplyrecipes.com/recipes/ingredient/beef/">Beef</a></li>
+<li id="menu-item-15027" class="menu-item menu-item-type-taxonomy menu-item-object-ingredient menu-item-15027"><a href="http://www.simplyrecipes.com/recipes/ingredient/fish_and_seafood/">Fish and Seafood</a></li>
+<li id="menu-item-14939" class="menu-item menu-item-type-taxonomy menu-item-object-ingredient menu-item-14939"><a href="http://www.simplyrecipes.com/recipes/ingredient/pasta/">Pasta</a></li>
+<li id="menu-item-14940" class="menu-item menu-item-type-taxonomy menu-item-object-recipe-type menu-item-14940"><a href="http://www.simplyrecipes.com/recipes/type/gluten-free/">Gluten-Free</a></li>
+<li id="menu-item-14941" class="menu-item menu-item-type-taxonomy menu-item-object-recipe-type menu-item-14941"><a href="http://www.simplyrecipes.com/recipes/type/vegetarian/">Vegetarian</a></li>
+<li id="menu-item-14942" class="menu-item menu-item-type-taxonomy menu-item-object-recipe-type menu-item-14942"><a href="http://www.simplyrecipes.com/recipes/type/quick/">Quick</a></li>
+<li id="menu-item-14944" class="menu-item menu-item-type-taxonomy menu-item-object-recipe-type menu-item-14944"><a href="http://www.simplyrecipes.com/recipes/type/budget/">Budget</a></li>
+<li id="menu-item-14945" class="menu-item menu-item-type-taxonomy menu-item-object-recipe-type menu-item-14945"><a href="http://www.simplyrecipes.com/recipes/type/how_to/">How To</a></li>
+<li id="menu-item-14943" class="menu-item menu-item-type-taxonomy menu-item-object-recipe-type menu-item-14943"><a href="http://www.simplyrecipes.com/recipes/type/paleo/">Paleo</a></li>
+<li id="menu-item-16661" class="menu-item menu-item-type-taxonomy menu-item-object-recipe-type menu-item-16661"><a href="http://www.simplyrecipes.com/recipes/type/low_carb/">Low Carb</a></li>
+</ul></section><section class="widget-section" id="taxonomy-main-ingredient"><h4>Main Ingredient</h4><ul><li><a href="http://www.simplyrecipes.com/recipes/ingredient/beef/">Beef</a></li><li><a href="http://www.simplyrecipes.com/recipes/ingredient/cheese/">Cheese</a></li><li><a href="http://www.simplyrecipes.com/recipes/ingredient/chicken/">Chicken</a></li><li><a href="http://www.simplyrecipes.com/recipes/ingredient/duck/">Duck</a></li><li><a href="http://www.simplyrecipes.com/recipes/ingredient/egg/">Egg</a></li><li><a href="http://www.simplyrecipes.com/recipes/ingredient/fish/">Fish</a></li><li><a href="http://www.simplyrecipes.com/recipes/ingredient/fish_and_seafood/">Fish and Seafood</a></li><li><a href="http://www.simplyrecipes.com/recipes/ingredient/lamb/">Lamb</a></li><li><a href="http://www.simplyrecipes.com/recipes/ingredient/pasta/">Pasta</a></li><li><a href="http://www.simplyrecipes.com/recipes/ingredient/pork/">Pork</a></li><li><a href="http://www.simplyrecipes.com/recipes/ingredient/rice/">Rice</a></li><li><a href="http://www.simplyrecipes.com/recipes/ingredient/seafood/">Seafood</a></li><li><a href="http://www.simplyrecipes.com/recipes/ingredient/turkey/">Turkey</a></li><li><a href="http://www.simplyrecipes.com/recipes/ingredient/vegetable/">Vegetables</a></li></ul></section><section class="widget-section" id="taxonomy-course"><h4>Course</h4><ul><li><a href="http://www.simplyrecipes.com/recipes/course/appetizer/">Appetizer</a></li><li><a href="http://www.simplyrecipes.com/recipes/course/breakfast_and_brunch/">Breakfast and Brunch</a></li><li><a href="http://www.simplyrecipes.com/recipes/course/dessert/">Dessert</a></li><li><a href="http://www.simplyrecipes.com/recipes/course/drink/">Drink</a></li><li><a href="http://www.simplyrecipes.com/recipes/course/main_course/">Main Course</a></li><li><a href="http://www.simplyrecipes.com/recipes/course/salad/">Salad</a></li><li><a href="http://www.simplyrecipes.com/recipes/course/sandwich/">Sandwich</a></li><li><a href="http://www.simplyrecipes.com/recipes/course/side_dish/">Side Dish</a></li><li><a href="http://www.simplyrecipes.com/recipes/course/snack/">Snack</a></li><li><a href="http://www.simplyrecipes.com/recipes/course/soup/">Soup</a></li><li><a href="http://www.simplyrecipes.com/recipes/course/soup_and_stew/">Soup and Stew</a></li><li><a href="http://www.simplyrecipes.com/recipes/course/stew/">Stew</a></li></ul></section><section class="widget-section" id="taxonomy-season"><h4>Season</h4><ul><li><a href="http://www.simplyrecipes.com/recipes/season/christmas/">Christmas</a></li><li><a href="http://www.simplyrecipes.com/recipes/season/easter/">Easter</a></li><li><a href="http://www.simplyrecipes.com/recipes/season/game-day/">Game Day</a></li><li><a href="http://www.simplyrecipes.com/recipes/season/halloween/">Halloween</a></li><li><a href="http://www.simplyrecipes.com/recipes/season/holiday/">Holiday</a></li><li><a href="http://www.simplyrecipes.com/recipes/season/mothers_day/">Mother's Day</a></li><li><a href="http://www.simplyrecipes.com/recipes/season/passover/">Passover</a></li><li><a href="http://www.simplyrecipes.com/recipes/season/seasonal_favorites_fall/">Fall</a></li><li><a href="http://www.simplyrecipes.com/recipes/season/seasonal_favorites_spring/">Spring</a></li><li><a href="http://www.simplyrecipes.com/recipes/season/seasonal_favorites_summer/">Summer</a></li><li><a href="http://www.simplyrecipes.com/recipes/season/seasonal_favorites_winter/">Winter</a></li><li><a href="http://www.simplyrecipes.com/recipes/season/st_patricks_day/">St. Patrick's Day</a></li><li><a href="http://www.simplyrecipes.com/recipes/season/super_bowl/">Super Bowl</a></li><li><a href="http://www.simplyrecipes.com/recipes/season/thanksgiving/">Thanksgiving</a></li><li><a href="http://www.simplyrecipes.com/recipes/season/valentines_day/">Valentine's Day</a></li></ul></section><section class="widget-section" id="taxonomy-recipe-type"><h4>Recipe Type</h4><ul><li><a href="http://www.simplyrecipes.com/recipes/type/bakery/">Bakery</a></li><li><a href="http://www.simplyrecipes.com/recipes/type/bbq/">BBQ</a></li><li><a href="http://www.simplyrecipes.com/recipes/type/budget/">Budget</a></li><li><a href="http://www.simplyrecipes.com/recipes/type/candy/">Candy</a></li><li><a href="http://www.simplyrecipes.com/recipes/type/canning/">Canning</a></li><li><a href="http://www.simplyrecipes.com/recipes/type/casserole/">Casserole</a></li><li><a href="http://www.simplyrecipes.com/recipes/type/comfort_food/">Comfort Food</a></li><li><a href="http://www.simplyrecipes.com/recipes/type/condiment/">Condiment</a></li><li><a href="http://www.simplyrecipes.com/recipes/type/cookie/">Cookie</a></li><li><a href="http://www.simplyrecipes.com/recipes/type/deep_fried/">Deep Fried</a></li><li><a href="http://www.simplyrecipes.com/recipes/type/dip/">Dip</a></li><li><a href="http://www.simplyrecipes.com/recipes/type/gluten-free/">Gluten-Free</a></li><li><a href="http://www.simplyrecipes.com/recipes/type/grill/">Grill</a></li><li><a href="http://www.simplyrecipes.com/recipes/type/how_to/">How To</a></li><li><a href="http://www.simplyrecipes.com/recipes/type/jams_and_jellies/">Jams and Jellies</a></li><li><a href="http://www.simplyrecipes.com/recipes/type/kidfriendly/">Kid-friendly</a></li><li><a href="http://www.simplyrecipes.com/recipes/type/low_carb/">Low Carb</a></li><li><a href="http://www.simplyrecipes.com/recipes/type/paleo/">Paleo</a></li><li><a href="http://www.simplyrecipes.com/recipes/type/panini/">Panini</a></li><li><a href="http://www.simplyrecipes.com/recipes/type/quick/">Quick</a></li><li><a href="http://www.simplyrecipes.com/recipes/type/salsa/">Salsa</a></li><li><a href="http://www.simplyrecipes.com/recipes/type/sauce/">Sauce</a></li><li><a href="http://www.simplyrecipes.com/recipes/type/slow_cooker/">Slow Cooker</a></li><li><a href="http://www.simplyrecipes.com/recipes/type/stirfry/">Stir-fry</a></li><li><a href="http://www.simplyrecipes.com/recipes/type/vegan/">Vegan</a></li><li><a href="http://www.simplyrecipes.com/recipes/type/vegetarian/">Vegetarian</a></li></ul></section><section class="widget-section" id="taxonomy-cuisine"><h4>Cuisine</h4><ul><li><a href="http://www.simplyrecipes.com/recipes/cuisine/african/">African</a></li><li><a href="http://www.simplyrecipes.com/recipes/cuisine/basque/">Basque</a></li><li><a href="http://www.simplyrecipes.com/recipes/cuisine/belgian/">Belgian</a></li><li><a href="http://www.simplyrecipes.com/recipes/cuisine/cajun/">Cajun</a></li><li><a href="http://www.simplyrecipes.com/recipes/cuisine/chinese/">Chinese</a></li><li><a href="http://www.simplyrecipes.com/recipes/cuisine/cowboy/">Cowboy</a></li><li><a href="http://www.simplyrecipes.com/recipes/cuisine/creole/">Creole</a></li><li><a href="http://www.simplyrecipes.com/recipes/cuisine/ethiopian/">Ethiopian</a></li><li><a href="http://www.simplyrecipes.com/recipes/cuisine/french/">French</a></li><li><a href="http://www.simplyrecipes.com/recipes/cuisine/german/">German</a></li><li><a href="http://www.simplyrecipes.com/recipes/cuisine/hawaiian/">Hawaiian</a></li><li><a href="http://www.simplyrecipes.com/recipes/cuisine/hungarian/">Hungarian</a></li><li><a href="http://www.simplyrecipes.com/recipes/cuisine/indian/">Indian</a></li><li><a href="http://www.simplyrecipes.com/recipes/cuisine/irish/">Irish</a></li><li><a href="http://www.simplyrecipes.com/recipes/cuisine/italian/">Italian</a></li><li><a href="http://www.simplyrecipes.com/recipes/cuisine/jamaican/">Jamaican</a></li><li><a href="http://www.simplyrecipes.com/recipes/cuisine/japanese/">Japanese</a></li><li><a href="http://www.simplyrecipes.com/recipes/cuisine/jewish/">Jewish</a></li><li><a href="http://www.simplyrecipes.com/recipes/cuisine/korean/">Korean</a></li><li><a href="http://www.simplyrecipes.com/recipes/cuisine/mediterranean-diet/">Mediterranean Diet</a></li><li><a href="http://www.simplyrecipes.com/recipes/cuisine/mexican/">Mexican</a></li><li><a href="http://www.simplyrecipes.com/recipes/cuisine/mexican_and_tex_mex/">Mexican and Tex Mex</a></li><li><a href="http://www.simplyrecipes.com/recipes/cuisine/middle-eastern/">Middle Eastern</a></li><li><a href="http://www.simplyrecipes.com/recipes/cuisine/moroccan_cuisine/">Moroccan Cuisine</a></li><li><a href="http://www.simplyrecipes.com/recipes/cuisine/new_england/">New England</a></li><li><a href="http://www.simplyrecipes.com/recipes/cuisine/new_orleans/">New Orleans</a></li><li><a href="http://www.simplyrecipes.com/recipes/cuisine/new_zealand/">New Zealand</a></li><li><a href="http://www.simplyrecipes.com/recipes/cuisine/persian/">Persian</a></li><li><a href="http://www.simplyrecipes.com/recipes/cuisine/polish/">Polish</a></li><li><a href="http://www.simplyrecipes.com/recipes/cuisine/portuguese/">Portuguese</a></li><li><a href="http://www.simplyrecipes.com/recipes/cuisine/provencal/">Provencal</a></li><li><a href="http://www.simplyrecipes.com/recipes/cuisine/southern/">Southern</a></li><li><a href="http://www.simplyrecipes.com/recipes/cuisine/southwestern/">Southwestern</a></li><li><a href="http://www.simplyrecipes.com/recipes/cuisine/swedish/">Swedish</a></li><li><a href="http://www.simplyrecipes.com/recipes/cuisine/texmex/">TexMex</a></li></ul></section><a class="recipe-index" href="http://www.simplyrecipes.com/index/">Index of All Recipes</a></div></div><div id="custom_post_widget-22" class="widget-2 widget-even widget-subscribe widget-borderless widget widget_custom_post_widget"><h3 class="widget-title">Never miss a recipe!</h3><p>Get free email updates from Simply Recipes:</p>
+<form action="http://www.feedblitz.com/f/f.fbz?AddNewUserDirect" method="post">
+<div class="field-holder"><input class="field" type="text" maxlength="100" name="email" size="18" placeholder="Your email here..."></div>
+<p><input type="hidden" name="feedid" value="25748"><br />
+<input id="submit" type="submit" value="Subscribe" name="submit"><br />
+</form>
+</div><div id="custom_post_widget-70" class="widget-3 widget-odd widget-fbs widget-borderless widget widget_custom_post_widget"><div id="fbs-widget-content"></div>
+</div><div id="custom_post_widget-28" class="widget-4 widget-even widget widget_custom_post_widget"><h3 class="widget-title">Discover More</h3><ul>
+<li><a href="http://www.elise.com/" title="Elise Bauer's Personal Blog" rel="nofollow">www.elise.com</a></li>
+<li>Follow <a href="http://twitter.com/simplyrecipes" rel="nofollow">me</a> or get <a href="http://twitter.com/recipeupdates/" rel="nofollow">recipe updates</a> on <a href="http://twitter.com/home" rel="nofollow">Twitter</a></li>
+<li><a href="http://www.simplyrecipes.com/press/" rel="nofollow">Press and Awards</a></li>
+<li><a href="http://www.simplyrecipes.com/food_blogs/" rel="nofollow">Favorite Food Blogs</a></li>
+</ul>
+</div><div id="custom_post_widget-69" class="widget-5 widget-last widget-odd widget-flc widget-borderless widget widget_custom_post_widget"><p><a title="Donate to the Food Literacy Center" href="http://foodliteracycenter.org/"><img src="/wp-content/themes/simply/assets/i/badge-foodliteracy.png" alt="Food Literacy Center" width="160" height="172" nopin="nopin"></a></p>
+</div></div>
+<div class="widget-area sidebar-right" role="complementary"><div class="welcome-widget widget"><div class="welcome-text"><h3 class="widget-title">Welcome to Simply Recipes!</h3><div class="welcome-image"><a href="http://www.simplyrecipes.com/about/"><img src="http://www.simplyrecipes.com/wp-content/themes/simply/assets/i/welcome-image.png" alt="Elise Bauer" nopin="nopin"></a></div><p>Thank you for stopping by our family food blog where you can find well-crafted recipes for the home cook.</p>
+
+<p>Happy cooking! <em><a href="/about/" title="Elise Bauer">~Elise</a></em></p></div>            <ul class="social-links">
+                <li class="social-facebook"><a href="https://www.facebook.com/simplyrecipes" title="Simply Recipes on Facebook">Simply Recipes on Facebook</a></li>
+                <li class="social-pinterest"><a href="http://pinterest.com/simplyrecipes/" title="Simply Recipes on Pinterest">Simply Recipes on Pinterest</a></li>
+                <li class="social-twitter"><a href="https://twitter.com/simplyrecipes" title="Simply Recipes on Twitter">Simply Recipes on Twitter</a></li>
+                <li class="social-ig"><a href="https://instagram.com/simplyrecipes/" title="Simply Recipes on Instagram">Simply Recipes on Instagram</a></li>
+            </ul>
+            <div style="text-align:center"><a data-pin-do="buttonFollow" href="http://www.pinterest.com/simplyrecipes/" title="Follow Simply Recipes on Pinterest">Follow me on Pinterest</a></div>
+        </div><div id="widget-ad-sidebar-single-1" class="widget-ad ad-sidebar-single-1">
+
+<!-- BLOGHER || Main ad -->
+<div id="blogher-sidebar-a"></div>
+
+</div><div id="inseason-2" class="widget-3 widget-odd widget-in-season widget-borderless widget in-season"><a href="http://www.simplyrecipes.com/recipes/month/may/" title="An archive of all May recipes."><div class="featured-image"><img width="180" height="120" src="http://www.simplyrecipes.com/wp-content/uploads/2012/05/pasta-artichoke-sun-dried-tomato-almonds-180x120.jpg" class="photo wp-post-image" alt="Pasta with Artichoke Hearts, Sun Dried Tomatoes, and Toasted Almonds (photo)" nopin="nopin" /><img width="180" height="120" src="http://www.simplyrecipes.com/wp-content/uploads/2012/05/browned-butter-oatmeal-horiz-640-180x120.jpg" class="photo wp-post-image" alt="Browned Butter Oatmeal Chocolate Chip Cookies" nopin="nopin" /><img width="180" height="120" src="http://www.simplyrecipes.com/wp-content/uploads/2012/05/portabello-mushroom-burger-a-180x120.jpg" class="photo wp-post-image" alt="Portobello Mushroom Burger (photo)" nopin="nopin" /><img width="180" height="120" src="http://www.simplyrecipes.com/wp-content/uploads/2012/05/angel-hair-pasta-shrimp-lemon-cream-640b-180x120.jpg" class="photo wp-post-image" alt="Angel Hair Pasta with Shrimp and Lemon Cream Sauce" nopin="nopin" /></div><h3 class="widget-title">What's in Season?</h3><p>Browse all of our <b>May</b> recipes.</p></a></div><div id="tabbedfavorites-2" class="widget-4 widget-even widget-tabbed widget-borderless widget tabbed-favorites"><div class="tabs">
+<div class="tab-dropdown">Menu</div>
+   <ul>
+      <li><a href="#favorites-panel">Favorites</a></li>
+      <li><a href="#seasonal-panel">In Season</a></li>
+      <li><a href="#budget-panel">Budget</a></li>
+   </ul>
+</div>
+<div class="panels">
+   <div id="favorites-panel" class="panel">
+      <ul>
+<li><a href="http://www.simplyrecipes.com/recipes/applesauce/" title="Applesauce">Applesauce</a></li><li><a href="http://www.simplyrecipes.com/recipes/parmesan_chicken/" title="Baked Parmesan Chicken Nuggets">Baked Parmesan Chicken Nuggets</a></li><li><a href="http://www.simplyrecipes.com/recipes/banana_bread/" title="Banana Bread">Banana Bread</a></li><li><a href="http://www.simplyrecipes.com/recipes/beef_stroganoff/" title="Beef Stroganoff">Beef Stroganoff</a></li><li><a href="http://www.simplyrecipes.com/recipes/brownie_in_a_mug/" title="Brownie in a Mug">Brownie in a Mug</a></li><li><a href="http://www.simplyrecipes.com/recipes/carne_asada/" title="Carne Asada">Carne Asada</a></li><li><a href="http://www.simplyrecipes.com/recipes/chicken_fajitas/" title="Chicken Fajitas">Chicken Fajitas</a></li><li><a href="http://www.simplyrecipes.com/recipes/chicken_parmesan/" title="Chicken Parmesan">Chicken Parmesan</a></li><li><a href="http://www.simplyrecipes.com/recipes/chicken_piccata/" title="Chicken Piccata">Chicken Piccata</a></li><li><a href="http://www.simplyrecipes.com/recipes/chicken_salad/" title="Chicken Salad">Chicken Salad</a></li><li><a href="http://www.simplyrecipes.com/recipes/classic_baked_chicken/" title="Classic Baked Chicken">Classic Baked Chicken</a></li><li><a href="http://www.simplyrecipes.com/recipes/classic_meatloaf/" title="Classic Meatloaf">Classic Meatloaf</a></li><li><a href="http://www.simplyrecipes.com/recipes/cobb_salad/" title="Cobb Salad">Cobb Salad</a></li><li><a href="http://www.simplyrecipes.com/recipes/coleslaw/" title="Coleslaw">Coleslaw</a></li><li><a href="http://www.simplyrecipes.com/recipes/crispy_hash_browns/" title="Crispy Hash Browns">Crispy Hash Browns</a></li><li><a href="http://www.simplyrecipes.com/recipes/dads_fish_stew/" title="Dad&#8217;s Fish Stew">Dad&#8217;s Fish Stew</a></li><li><a href="http://www.simplyrecipes.com/recipes/dads_stuffed_bell_peppers/" title="Dad&#8217;s Stuffed Bell Peppers">Dad&#8217;s Stuffed Bell Peppers</a></li><li><a href="http://www.simplyrecipes.com/recipes/italian_sausage_spaghetti/" title="EASY Italian Sausage Spaghetti">EASY Italian Sausage Spaghetti</a></li><li><a href="http://www.simplyrecipes.com/recipes/easy_shepherds_pie/" title="Easy Shepherd&#8217;s Pie">Easy Shepherd&#8217;s Pie</a></li><li><a href="http://www.simplyrecipes.com/recipes/enchiladas/" title="Enchiladas">Enchiladas</a></li></ul><ul id="favorites-more" class="hidden"><li><a href="http://www.simplyrecipes.com/recipes/french_toast/" title="French Toast">French Toast</a></li><li><a href="http://www.simplyrecipes.com/recipes/fresh_tomato_salsa/" title="Fresh Tomato Salsa">Fresh Tomato Salsa</a></li><li><a href="http://www.simplyrecipes.com/recipes/garlic_bread/" title="Garlic Bread">Garlic Bread</a></li><li><a href="http://www.simplyrecipes.com/recipes/green_beans_with_almonds_and_thyme/" title="Green Beans with Almonds and Thyme">Green Beans with Almonds and Thyme</a></li><li><a href="http://www.simplyrecipes.com/recipes/hamburger_and_macaroni/" title="Hamburger and Macaroni">Hamburger and Macaroni</a></li><li><a href="http://www.simplyrecipes.com/recipes/home_fries/" title="Home Fries">Home Fries</a></li><li><a href="http://www.simplyrecipes.com/recipes/homemade_pizza/" title="Homemade Pizza">Homemade Pizza</a></li><li><a href="http://www.simplyrecipes.com/recipes/how_to_make_chicken_stock/" title="How to Make Chicken Stock">How to Make Chicken Stock</a></li><li><a href="http://www.simplyrecipes.com/recipes/how_to_make_perfect_hard_boiled_eggs/" title="How to Make Perfect Hard Boiled Eggs">How to Make Perfect Hard Boiled Eggs</a></li><li><a href="http://www.simplyrecipes.com/recipes/hummus/" title="Hummus">Hummus</a></li><li><a href="http://www.simplyrecipes.com/recipes/irish_soda_bread/" title="Irish Soda Bread">Irish Soda Bread</a></li><li><a href="http://www.simplyrecipes.com/recipes/kellers_roast_chicken/" title="Keller&#8217;s Roast Chicken">Keller&#8217;s Roast Chicken</a></li><li><a href="http://www.simplyrecipes.com/recipes/lasagna/" title="Lasagna">Lasagna</a></li><li><a href="http://www.simplyrecipes.com/recipes/lasagna_bolognese/" title="Lasagna Bolognese">Lasagna Bolognese</a></li><li><a href="http://www.simplyrecipes.com/recipes/lemon_blueberry_ricotta_pound_cake/" title="Lemon Blueberry Ricotta Pound Cake">Lemon Blueberry Ricotta Pound Cake</a></li><li><a href="http://www.simplyrecipes.com/recipes/lemon_chicken/" title="Lemon Chicken">Lemon Chicken</a></li><li><a href="http://www.simplyrecipes.com/recipes/mexican_fruit_cocktail/" title="Mexican Fruit Cocktail">Mexican Fruit Cocktail</a></li><li><a href="http://www.simplyrecipes.com/recipes/minestrone_soup/" title="Minestrone Soup">Minestrone Soup</a></li><li><a href="http://www.simplyrecipes.com/recipes/moms_pan-fried_london_broil_steak/" title="Mom&#8217;s Pan-fried London Broil Steak">Mom&#8217;s Pan-fried London Broil Steak</a></li><li><a href="http://www.simplyrecipes.com/recipes/moms_perfect_pork_chops/" title="Mom&#8217;s Perfect Pork Chops">Mom&#8217;s Perfect Pork Chops</a></li><li><a href="http://www.simplyrecipes.com/recipes/moms_turkey_soup/" title="Mom&#8217;s Turkey Soup">Mom&#8217;s Turkey Soup</a></li><li><a href="http://www.simplyrecipes.com/recipes/oatmeal_raisin_cookies/" title="Oatmeal Raisin Cookies">Oatmeal Raisin Cookies</a></li><li><a href="http://www.simplyrecipes.com/recipes/oven_baked_sweet_potato_fries/" title="Oven Baked Sweet Potato Fries">Oven Baked Sweet Potato Fries</a></li><li><a href="http://www.simplyrecipes.com/recipes/oven_fried_potato_chips/" title="Oven-fried Potato Chips">Oven-fried Potato Chips</a></li><li><a href="http://www.simplyrecipes.com/recipes/peanut_butter_cookies/" title="Peanut Butter Cookies">Peanut Butter Cookies</a></li><li><a href="http://www.simplyrecipes.com/recipes/perfect_cheesecake/" title="Perfect Cheesecake">Perfect Cheesecake</a></li><li><a href="http://www.simplyrecipes.com/recipes/perfect_guacamole/" title="Perfect Guacamole">Perfect Guacamole</a></li><li><a href="http://www.simplyrecipes.com/recipes/perfect_lemonade/" title="Perfect Lemonade">Perfect Lemonade</a></li><li><a href="http://www.simplyrecipes.com/recipes/perfect_mashed_potatoes/" title="Perfect Mashed Potatoes">Perfect Mashed Potatoes</a></li><li><a href="http://www.simplyrecipes.com/recipes/perfect_pie_crust/" title="Perfect Pie Crust">Perfect Pie Crust</a></li><li><a href="http://www.simplyrecipes.com/recipes/perfect_popcorn/" title="Perfect Popcorn">Perfect Popcorn</a></li><li><a href="http://www.simplyrecipes.com/recipes/pineapple_upside_down_cake/" title="Pineapple Upside Down Cake">Pineapple Upside Down Cake</a></li><li><a href="http://www.simplyrecipes.com/recipes/poached_salmon/" title="Poached Salmon">Poached Salmon</a></li><li><a href="http://www.simplyrecipes.com/recipes/pot_roast/" title="Pot Roast">Pot Roast</a></li><li><a href="http://www.simplyrecipes.com/recipes/pulled_pork_sandwich/" title="Pulled Pork Sandwich">Pulled Pork Sandwich</a></li><li><a href="http://www.simplyrecipes.com/recipes/quesadilla/" title="Quesadilla">Quesadilla</a></li><li><a href="http://www.simplyrecipes.com/recipes/red_beans_and_rice/" title="Red Beans and Rice">Red Beans and Rice</a></li><li><a href="http://www.simplyrecipes.com/recipes/refried_beans/" title="Refried Beans">Refried Beans</a></li><li><a href="http://www.simplyrecipes.com/recipes/rice_pudding/" title="Rice Pudding">Rice Pudding</a></li><li><a href="http://www.simplyrecipes.com/recipes/roast_beef/" title="Roast Beef">Roast Beef</a></li><li><a href="http://www.simplyrecipes.com/recipes/roasted_garlic/" title="Roasted Garlic">Roasted Garlic</a></li><li><a href="http://www.simplyrecipes.com/recipes/simple_salsa/" title="Simple Green Chile Tomato Salsa">Simple Green Chile Tomato Salsa</a></li><li><a href="http://www.simplyrecipes.com/recipes/sloppy_joes/" title="Sloppy Joes">Sloppy Joes</a></li><li><a href="http://www.simplyrecipes.com/recipes/vermicelli/" title="Sopa Seca de Fideo">Sopa Seca de Fideo</a></li><li><a href="http://www.simplyrecipes.com/recipes/sopa_seca_de_fideo_with_tomatillos/" title="Sopa Seca de Fideo with Tomatillos">Sopa Seca de Fideo with Tomatillos</a></li><li><a href="http://www.simplyrecipes.com/recipes/spaghetti_and_meatballs/" title="Spaghetti and Meatballs">Spaghetti and Meatballs</a></li><li><a href="http://www.simplyrecipes.com/recipes/spanish_rice/" title="Spanish Rice">Spanish Rice</a></li><li><a href="http://www.simplyrecipes.com/recipes/steak_fajitas/" title="Steak Fajitas">Steak Fajitas</a></li><li><a href="http://www.simplyrecipes.com/recipes/stove-top_baked_beans/" title="Stove-top Baked Beans">Stove-top Baked Beans</a></li><li><a href="http://www.simplyrecipes.com/recipes/tapioca_pudding/" title="Tapioca Pudding">Tapioca Pudding</a></li><li><a href="http://www.simplyrecipes.com/recipes/tortilla_soup/" title="Tortilla Soup">Tortilla Soup</a></li><li><a href="http://www.simplyrecipes.com/recipes/tuna_macaroni_salad/" title="Tuna Macaroni Salad">Tuna Macaroni Salad</a></li><li><a href="http://www.simplyrecipes.com/recipes/tuna_salad_sandwich/" title="Tuna Salad Sandwich">Tuna Salad Sandwich</a></li><li><a href="http://www.simplyrecipes.com/recipes/twice_baked_potatoes/" title="Twice Baked Potatoes">Twice Baked Potatoes</a></li>      </ul>
+<p class="toggle-more"><a href="#favorites-more">+ Show More</a></p>
+   </div>
+   <div id="seasonal-panel" class="panel">
+      <ul>
+<li><a href="http://www.simplyrecipes.com/recipes/artichoke_leek_frittata/" title="Artichoke Leek Frittata">Artichoke Leek Frittata</a></li><li><a href="http://www.simplyrecipes.com/recipes/artichoke_soup/" title="Artichoke Soup">Artichoke Soup</a></li><li><a href="http://www.simplyrecipes.com/recipes/asparagus/" title="Asparagus">Asparagus</a></li><li><a href="http://www.simplyrecipes.com/recipes/asparagus_frittata/" title="Asparagus Frittata">Asparagus Frittata</a></li><li><a href="http://www.simplyrecipes.com/recipes/asparagus_pesto_with_pasta/" title="Asparagus Pesto with Pasta">Asparagus Pesto with Pasta</a></li><li><a href="http://www.simplyrecipes.com/recipes/asparagus_risotto/" title="Asparagus Risotto">Asparagus Risotto</a></li><li><a href="http://www.simplyrecipes.com/recipes/asparagus_salad_with_shrimp/" title="Asparagus Salad with Shrimp">Asparagus Salad with Shrimp</a></li><li><a href="http://www.simplyrecipes.com/recipes/asparagus_souffle/" title="Asparagus Soufflé">Asparagus Soufflé</a></li><li><a href="http://www.simplyrecipes.com/recipes/asparagus_with_hollandaise_sauce/" title="Asparagus with Hollandaise Sauce">Asparagus with Hollandaise Sauce</a></li><li><a href="http://www.simplyrecipes.com/recipes/asparagus_with_lime_and_mint/" title="Asparagus with Lime and Mint">Asparagus with Lime and Mint</a></li><li><a href="http://www.simplyrecipes.com/recipes/baked_asparagus_with_parmesan/" title="Baked Asparagus with Parmesan">Baked Asparagus with Parmesan</a></li><li><a href="http://www.simplyrecipes.com/recipes/creamy_asparagus_soup/" title="Creamy Asparagus Soup">Creamy Asparagus Soup</a></li><li><a href="http://www.simplyrecipes.com/recipes/deviled_eggs/" title="Deviled Eggs">Deviled Eggs</a></li><li><a href="http://www.simplyrecipes.com/recipes/fava_bean_dip_with_goat_cheese_and_garlic/" title="Fava Bean Dip with Goat Cheese and Garlic">Fava Bean Dip with Goat Cheese and Garlic</a></li><li><a href="http://www.simplyrecipes.com/recipes/grilled_butterflied_leg_of_lamb/" title="Grilled Butterflied Leg of Lamb">Grilled Butterflied Leg of Lamb</a></li><li><a href="http://www.simplyrecipes.com/recipes/grilled_skirt_steak_skewers/" title="Grilled Skirt Steak Skewers">Grilled Skirt Steak Skewers</a></li><li><a href="http://www.simplyrecipes.com/recipes/ham_and_asparagus_quiche/" title="Ham and Asparagus Quiche">Ham and Asparagus Quiche</a></li><li><a href="http://www.simplyrecipes.com/recipes/irish_lamb_stew_with_a_twist/" title="Irish Lamb Stew with Bacon">Irish Lamb Stew with Bacon</a></li><li><a href="http://www.simplyrecipes.com/recipes/lamb_curry/" title="Lamb Curry">Lamb Curry</a></li><li><a href="http://www.simplyrecipes.com/recipes/moms_pasta_primavera/" title="Mom&#8217;s Pasta Primavera">Mom&#8217;s Pasta Primavera</a></li></ul><ul id="seasonal-more" class="hidden"><li><a href="http://www.simplyrecipes.com/recipes/pasta_with_tuna_arugula_and_hot_pepper/" title="Pasta with Tuna, Arugula, and Hot Pepper">Pasta with Tuna, Arugula, and Hot Pepper</a></li><li><a href="http://www.simplyrecipes.com/recipes/ramp_and_parsley_pesto/" title="Ramp and Parsley Pesto">Ramp and Parsley Pesto</a></li><li><a href="http://www.simplyrecipes.com/recipes/rhubarb_ginger_galette/" title="Rhubarb Ginger Galette">Rhubarb Ginger Galette</a></li><li><a href="http://www.simplyrecipes.com/recipes/rhubarb_orange_meringue_pie/" title="Rhubarb Meringue Pie">Rhubarb Meringue Pie</a></li><li><a href="http://www.simplyrecipes.com/recipes/roast_leg_of_lamb/" title="Roast Leg of Lamb">Roast Leg of Lamb</a></li><li><a href="http://www.simplyrecipes.com/recipes/roasted_asparagus/" title="Roasted Asparagus">Roasted Asparagus</a></li><li><a href="http://www.simplyrecipes.com/recipes/rosemary_lemon_rhubarb_spritzer/" title="Rosemary Lemon Rhubarb Spritzer">Rosemary Lemon Rhubarb Spritzer</a></li><li><a href="http://www.simplyrecipes.com/recipes/sauteed_baby_artichokes/" title="Sauteed Baby Artichokes">Sauteed Baby Artichokes</a></li><li><a href="http://www.simplyrecipes.com/recipes/seared_sugar_snap_peas/" title="Seared Sugar Snap Peas">Seared Sugar Snap Peas</a></li><li><a href="http://www.simplyrecipes.com/recipes/snow_peas_with_pine_nuts_and_mint/" title="Snow Peas with Pine Nuts and Mint">Snow Peas with Pine Nuts and Mint</a></li><li><a href="http://www.simplyrecipes.com/recipes/spring_fava_bean_fennel_salad/" title="Spring Fava Bean Fennel Salad">Spring Fava Bean Fennel Salad</a></li><li><a href="http://www.simplyrecipes.com/recipes/spring_lamb_stew/" title="Spring Lamb Stew">Spring Lamb Stew</a></li><li><a href="http://www.simplyrecipes.com/recipes/spring_minestrone_soup/" title="Spring Minestrone Soup">Spring Minestrone Soup</a></li><li><a href="http://www.simplyrecipes.com/recipes/strawberry_rhubarb_cobbler/" title="Strawberry Rhubarb Cobbler">Strawberry Rhubarb Cobbler</a></li><li><a href="http://www.simplyrecipes.com/recipes/strawberry_rhubarb_pie/" title="Strawberry Rhubarb Pie">Strawberry Rhubarb Pie</a></li><li><a href="http://www.simplyrecipes.com/recipes/strawberry_rhubarb_terrine/" title="Strawberry Rhubarb Terrine">Strawberry Rhubarb Terrine</a></li><li><a href="http://www.simplyrecipes.com/recipes/strawberry_shortcake/" title="Strawberry Shortcake">Strawberry Shortcake</a></li><li><a href="http://www.simplyrecipes.com/recipes/wilted_watercress_salad/" title="Wilted Watercress Salad with Bacon Dressing">Wilted Watercress Salad with Bacon Dressing</a></li>      </ul>
+<p class="toggle-more"><a href="#seasonal-more">Show More</a></p>
+   </div>
+   <div id="budget-panel" class="panel">
+      <ul>
+<li><a href="http://www.simplyrecipes.com/recipes/african_chicken_peanut_stew/" title="African Chicken Peanut Stew">African Chicken Peanut Stew</a></li><li><a href="http://www.simplyrecipes.com/recipes/angel_hair_pasta_with_clams_cherry_tomatoes_and_basil/" title="Angel Hair Pasta with Clams, Cherry Tomatoes, and Basil">Angel Hair Pasta with Clams, Cherry Tomatoes, and Basil</a></li><li><a href="http://www.simplyrecipes.com/recipes/arroz_con_pollo/" title="Arroz Con Pollo">Arroz Con Pollo</a></li><li><a href="http://www.simplyrecipes.com/recipes/asian_tuna_salad/" title="Asian Tuna Salad">Asian Tuna Salad</a></li><li><a href="http://www.simplyrecipes.com/recipes/baked_cod_with_ritz_cracker_topping/" title="Baked Cod with Ritz Cracker Topping">Baked Cod with Ritz Cracker Topping</a></li><li><a href="http://www.simplyrecipes.com/recipes/parmesan_chicken/" title="Baked Parmesan Chicken Nuggets">Baked Parmesan Chicken Nuggets</a></li><li><a href="http://www.simplyrecipes.com/recipes/baked_potato_soup/" title="Baked Potato Soup">Baked Potato Soup</a></li><li><a href="http://www.simplyrecipes.com/recipes/baked_ziti/" title="Baked Ziti">Baked Ziti</a></li><li><a href="http://www.simplyrecipes.com/recipes/braised_turkey_legs/" title="Braised Turkey Legs">Braised Turkey Legs</a></li><li><a href="http://www.simplyrecipes.com/recipes/breaded_and_baked_chicken_drumsticks/" title="Breaded and Baked Chicken Drumsticks">Breaded and Baked Chicken Drumsticks</a></li><li><a href="http://www.simplyrecipes.com/recipes/broccoli_cheddar_mac_and_cheese/" title="Broccoli Cheddar Mac and Cheese">Broccoli Cheddar Mac and Cheese</a></li><li><a href="http://www.simplyrecipes.com/recipes/blanched_cabbage_with_butter_and_caraway/" title="Buttered Cabbage with Caraway">Buttered Cabbage with Caraway</a></li><li><a href="http://www.simplyrecipes.com/recipes/cabbage_soup/" title="Cabbage Soup">Cabbage Soup</a></li><li><a href="http://www.simplyrecipes.com/recipes/cajun_turkey_pot_pie/" title="Cajun Turkey Pot Pie">Cajun Turkey Pot Pie</a></li><li><a href="http://www.simplyrecipes.com/recipes/chicken_cacciatore_hunter_style_chicken/" title="Chicken Cacciatore (Hunter Style Chicken)">Chicken Cacciatore (Hunter Style Chicken)</a></li><li><a href="http://www.simplyrecipes.com/recipes/chicken_marinara/" title="Chicken Marinara">Chicken Marinara</a></li><li><a href="http://www.simplyrecipes.com/recipes/chicken_paprikash/" title="Chicken Paprikash">Chicken Paprikash</a></li><li><a href="http://www.simplyrecipes.com/recipes/chorizo_mac_and_cheese/" title="Chorizo Mac and Cheese">Chorizo Mac and Cheese</a></li><li><a href="http://www.simplyrecipes.com/recipes/citrus_pork_with_egg_noodles/" title="Citrus Pork with Egg Noodles">Citrus Pork with Egg Noodles</a></li><li><a href="http://www.simplyrecipes.com/recipes/classic_baked_chicken/" title="Classic Baked Chicken">Classic Baked Chicken</a></li></ul><ul id="budget-more" class="hidden"><li><a href="http://www.simplyrecipes.com/recipes/classic_carrot_salad/" title="Classic Carrot Salad">Classic Carrot Salad</a></li><li><a href="http://www.simplyrecipes.com/recipes/colcannon/" title="Colcannon">Colcannon</a></li><li><a href="http://www.simplyrecipes.com/recipes/confetti_shrimp_with_angel_hair_pasta/" title="Confetti Shrimp with Angel Hair Pasta">Confetti Shrimp with Angel Hair Pasta</a></li><li><a href="http://www.simplyrecipes.com/cooking_on_a_budget/" title="Cooking on a budget">Cooking on a budget</a></li><li><a href="http://www.simplyrecipes.com/recipes/creamy_cheesy_turkey_enchiladas/" title="Creamy Cheesy Turkey Enchiladas">Creamy Cheesy Turkey Enchiladas</a></li><li><a href="http://www.simplyrecipes.com/recipes/crispy_chicken_skin_tacos_with_habanero_salsa/" title="Crispy Chicken Skin Tacos with Habanero Salsa">Crispy Chicken Skin Tacos with Habanero Salsa</a></li><li><a href="http://www.simplyrecipes.com/recipes/curried_ground_turkey_with_potatoes/" title="Curried Ground Turkey with Potatoes">Curried Ground Turkey with Potatoes</a></li><li><a href="http://www.simplyrecipes.com/recipes/curried_turkey_soup/" title="Curried Turkey Soup">Curried Turkey Soup</a></li><li><a href="http://www.simplyrecipes.com/recipes/deviled_egg_salad/" title="Deviled Egg Salad">Deviled Egg Salad</a></li><li><a href="http://www.simplyrecipes.com/recipes/easy_black_beans_and_rice/" title="Easy Black Beans and Rice">Easy Black Beans and Rice</a></li><li><a href="http://www.simplyrecipes.com/recipes/easy_shepherds_pie/" title="Easy Shepherd&#8217;s Pie">Easy Shepherd&#8217;s Pie</a></li><li><a href="http://www.simplyrecipes.com/recipes/enchiladas/" title="Enchiladas">Enchiladas</a></li><li><a href="http://www.simplyrecipes.com/recipes/fancy_hot_dogs/" title="Fancy Hot Dogs">Fancy Hot Dogs</a></li><li><a href="http://www.simplyrecipes.com/recipes/fried_catfish/" title="Fried Catfish">Fried Catfish</a></li><li><a href="http://www.simplyrecipes.com/recipes/ham_salad/" title="Ham Salad">Ham Salad</a></li><li><a href="http://www.simplyrecipes.com/recipes/hamburger_and_macaroni/" title="Hamburger and Macaroni">Hamburger and Macaroni</a></li><li><a href="http://www.simplyrecipes.com/recipes/hamburger_stroganoff/" title="Hamburger Stroganoff">Hamburger Stroganoff</a></li><li><a href="http://www.simplyrecipes.com/recipes/hoppin_john/" title="Hoppin&#8217; John">Hoppin&#8217; John</a></li><li><a href="http://www.simplyrecipes.com/recipes/how_to_make_chicken_stock/" title="How to Make Chicken Stock">How to Make Chicken Stock</a></li><li><a href="http://www.simplyrecipes.com/recipes/how_to_steam_eggs/" title="How to Steam Hard Boiled Eggs">How to Steam Hard Boiled Eggs</a></li><li><a href="http://www.simplyrecipes.com/recipes/italian_sausage_and_cabbage_stew/" title="Italian Sausage and Cabbage Stew">Italian Sausage and Cabbage Stew</a></li><li><a href="http://www.simplyrecipes.com/recipes/lemon_chicken/" title="Lemon Chicken">Lemon Chicken</a></li><li><a href="http://www.simplyrecipes.com/recipes/lentils_and_ham/" title="Lentils and Ham">Lentils and Ham</a></li><li><a href="http://www.simplyrecipes.com/recipes/moms_chili_beans/" title="Mom&#8217;s Chili Beans">Mom&#8217;s Chili Beans</a></li><li><a href="http://www.simplyrecipes.com/recipes/moms_ground_turkey_and_peppers/" title="Mom&#8217;s Ground Turkey and Peppers">Mom&#8217;s Ground Turkey and Peppers</a></li><li><a href="http://www.simplyrecipes.com/recipes/moms_macaroni_salad/" title="Mom&#8217;s Macaroni Salad">Mom&#8217;s Macaroni Salad</a></li><li><a href="http://www.simplyrecipes.com/recipes/moms_stuffed_bell_peppers/" title="Mom&#8217;s Stuffed Bell Peppers">Mom&#8217;s Stuffed Bell Peppers</a></li><li><a href="http://www.simplyrecipes.com/recipes/pasta_e_fagioli/" title="Pasta e Fagioli">Pasta e Fagioli</a></li><li><a href="http://www.simplyrecipes.com/recipes/pasta_puttanesca/" title="Pasta Puttanesca">Pasta Puttanesca</a></li><li><a href="http://www.simplyrecipes.com/recipes/pasta_with_tuna_and_capers_in_white_wine_sauce/" title="Pasta with Tuna and Capers in White Wine Sauce">Pasta with Tuna and Capers in White Wine Sauce</a></li><li><a href="http://www.simplyrecipes.com/recipes/pasta_with_tuna_and_tomato_sauce/" title="Pasta with Tuna and Tomato Sauce">Pasta with Tuna and Tomato Sauce</a></li><li><a href="http://www.simplyrecipes.com/recipes/penne_pasta_with_meat_sauce/" title="Penne Pasta with Meat Sauce">Penne Pasta with Meat Sauce</a></li><li><a href="http://www.simplyrecipes.com/recipes/pork_stir_fry_with_green_onion/" title="Pork Stir Fry with Green Onion">Pork Stir Fry with Green Onion</a></li><li><a href="http://www.simplyrecipes.com/recipes/pulled_pork_sandwich/" title="Pulled Pork Sandwich">Pulled Pork Sandwich</a></li><li><a href="http://www.simplyrecipes.com/recipes/quesadilla_pie/" title="Quesadilla Pie">Quesadilla Pie</a></li><li><a href="http://www.simplyrecipes.com/recipes/quick_and_easy_white_bean_salad/" title="Quick and Easy White Bean Salad">Quick and Easy White Bean Salad</a></li><li><a href="http://www.simplyrecipes.com/recipes/red_beans_and_rice/" title="Red Beans and Rice">Red Beans and Rice</a></li><li><a href="http://www.simplyrecipes.com/recipes/refried_beans/" title="Refried Beans">Refried Beans</a></li><li><a href="http://www.simplyrecipes.com/recipes/refried_black_beans/" title="Refried Black Beans">Refried Black Beans</a></li><li><a href="http://www.simplyrecipes.com/recipes/roast_beef/" title="Roast Beef">Roast Beef</a></li><li><a href="http://www.simplyrecipes.com/recipes/salmon_macaroni_salad/" title="Salmon Macaroni Salad">Salmon Macaroni Salad</a></li><li><a href="http://www.simplyrecipes.com/recipes/salmon_patties/" title="Salmon Patties">Salmon Patties</a></li><li><a href="http://www.simplyrecipes.com/recipes/santa_fe_pork_and_black_bean_stew/" title="Santa Fe Pork and Black Bean Stew">Santa Fe Pork and Black Bean Stew</a></li><li><a href="http://www.simplyrecipes.com/recipes/skillet_lemon_rosemary_chicken/" title="Skillet Lemon Rosemary Chicken">Skillet Lemon Rosemary Chicken</a></li><li><a href="http://www.simplyrecipes.com/recipes/slow_cooked_boston_baked_beans/" title="Slow Cooked Boston Baked Beans">Slow Cooked Boston Baked Beans</a></li><li><a href="http://www.simplyrecipes.com/recipes/southern_cornbread/" title="Southern Cornbread">Southern Cornbread</a></li><li><a href="http://www.simplyrecipes.com/recipes/spanish_roasted_potatoes_with_tomato_sauce/" title="Spanish Roasted Potatoes with Tomato Sauce">Spanish Roasted Potatoes with Tomato Sauce</a></li><li><a href="http://www.simplyrecipes.com/recipes/spicy_citrusy_black_beans/" title="Spicy, Citrusy Black Beans">Spicy, Citrusy Black Beans</a></li><li><a href="http://www.simplyrecipes.com/recipes/tomato_and_bread_soup_pappa_al_pomodoro/" title="Tomato and Bread Soup (Pappa al Pomodoro)">Tomato and Bread Soup (Pappa al Pomodoro)</a></li><li><a href="http://www.simplyrecipes.com/recipes/tuna_macaroni_salad/" title="Tuna Macaroni Salad">Tuna Macaroni Salad</a></li><li><a href="http://www.simplyrecipes.com/recipes/tuna_patties/" title="Tuna Patties">Tuna Patties</a></li><li><a href="http://www.simplyrecipes.com/recipes/tuna_tomato_pasta_with_olives/" title="Tuna Tomato Pasta with Olives">Tuna Tomato Pasta with Olives</a></li><li><a href="http://www.simplyrecipes.com/recipes/turkey_meatballs_with_tomatoes_and_basil/" title="Turkey Meatballs with Tomatoes and Basil">Turkey Meatballs with Tomatoes and Basil</a></li><li><a href="http://www.simplyrecipes.com/recipes/turkey_stew_with_peppers_and_mushrooms/" title="Turkey Stew with Peppers and Mushrooms">Turkey Stew with Peppers and Mushrooms</a></li><li><a href="http://www.simplyrecipes.com/recipes/turkey_stew_with_root_vegetables/" title="Turkey Stew with Root Vegetables">Turkey Stew with Root Vegetables</a></li><li><a href="http://www.simplyrecipes.com/recipes/white_bean_and_tuna_salad/" title="White Bean and Tuna Salad">White Bean and Tuna Salad</a></li>      </ul>
+<p class="toggle-more"><a href="#budget-more">Show More</a></p>
+   </div>
+</div>
+</div><div id="widget-ad-sidebar-single-2" class="widget-ad ad-sidebar-single-2">
+
+<!-- BLOGHER || Supplemental ad -->
+<div id="blogher-sidebar-b"></div>
+
+</div></div>
+
+
+	</div><!-- #main .site-main -->
+
+	<footer id="colophon" class="site-footer" role="contentinfo">
+
+		
+		<div class="site-info">
+						<span class="site-byline">Simply Recipes &copy;2003-2015 <br>Simply Recipes, Inc., by <a href="http://www.simplyrecipes.com/about/" title="About Elise Bauer">Elise Bauer</a></span> <span class="separator">|</span> <span class="site-links"><a href="http://www.simplyrecipes.com/advertise/" title="Advertise on Simply Recipes" rel="nofollow">Advertise</a> | <a href="http://www.simplyrecipes.com/privacy/" title="Simply Recipes Privacy Policy" rel="nofollow">Privacy Policy</a> | Design by Plasticmind</span>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon .site-footer -->
+</div><!-- #page .hfeed .site -->
+
+<script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
+<script type='text/javascript' src='http://www.simplyrecipes.com/wp-content/plugins/wp-ajaxify-comments/js/wp-ajaxify-comments.min.js?ver=1.3.0'></script>
+<script type='text/javascript' src='http://www.simplyrecipes.com/wp-content/themes/simply/assets/js/plugins-shared.min.js?ver=d3a1a1a1'></script>
+<script type='text/javascript' src='http://www.simplyrecipes.com/wp-content/themes/simply/assets/js/plugins-desktop.min.js?ver=72258c79'></script>
+<script type='text/javascript' src='http://www.simplyrecipes.com/wp-content/themes/simply/assets/js/tools.min.js?ver=96b4f7b0'></script>
+        <!-- Datonics -->
+        <script type="text/javascript" src="http://ads.pro-market.net/ads/scripts/site-132969.js"></script>
+        <!-- Cross Pixel -->
+        <script src="http://tag.crsspxl.com/s1.js?d=370"></script>
+    <!-- BEGIN Tynt Script -->
+    <script type="text/javascript">
+    if(document.location.protocol=='http:'){
+     var Tynt=Tynt||[];Tynt.push('b3CrWUmRKr5j87acwqm_6r');
+     (function(){var s=document.createElement('script');s.async="async";s.type="text/javascript";s.src='http://tcr.tynt.com/ti.js';var h=document.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);})();
+    }
+    </script>
+    <!-- END Tynt Script -->
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"258e13307c","applicationID":"3920898","transactionName":"MVZSbEUAWBFYURZQCQgccVtDCFkMFloNVAM=","queueTime":0,"applicationTime":1409,"atts":"HRFRGg0aSx8=","errorBeacon":"bam.nr-data.net","agent":"js-agent.newrelic.com\/nr-627.min.js"}</script></body>
+</html>
+<!-- Performance optimized by W3 Total Cache. Learn more: http://www.w3-edge.com/wordpress-plugins/
+
+Page Caching using disk: enhanced
+Application Monitoring using New Relic
+
+ Served from: www.simplyrecipes.com @ 2015-05-10 23:34:51 by W3 Total Cache -->
